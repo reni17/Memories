@@ -9,14 +9,14 @@ const Input = ({name, half, handleChange, label, autoFocus, type, handleShowPass
       <TextField name = {name} onChange = {handleChange} variant = 'outlined' required fullWidth
       label = {label}
       autoFocus = {autoFocus}
-      type = {type} InputProps = {name == 'password' && {endAdornment : (
+      type = {type} InputProps = {name == 'password' ? {endAdornment : (
         <InputAdornment position='end'>
             <IconButton onClick={handleShowPassword}>
                 {type == 'password' ? <Visibility/> : <VisibilityOff/>}
             </IconButton>
         </InputAdornment>
-      ), 
-    }}
+      )
+    } : null}
       />
     </Grid>
   )
